@@ -1,0 +1,76 @@
+<ion-view view-title="Dashboard" name="dashboard-view">
+  <ion-nav-buttons side="right">
+    <button class="button icon-left ion-log-out button-stable" ng-click="logout()">Logout</button>
+  </ion-nav-buttons>
+
+  <ion-content class="padding">
+    <!--<div class="row"><div class="col text-center">-->
+      <!--<h3 class="title">Welcome {{username}}!</h3>-->
+      <!--This could be your Dashboard.-->
+      <!--<br><br><br>-->
+      <!--<button class="button button-full button-positive" ng-click="performValidRequest()">-->
+        <!--Make Valid Request-->
+      <!--</button>-->
+      <!--<button class="button button-full button-energized" ng-click="performUnauthorizedRequest()">-->
+        <!--Make Request for unauthorized resource-->
+      <!--</button>-->
+      <!--<button class="button button-full button-assertive" ng-click="performInvalidRequest()">-->
+        <!--Make Request without valid token-->
+      <!--</button>-->
+      <!--<br><br>-->
+      <!--{{response}}-->
+    <!--</div></div>-->
+    <div class="list">
+      <div class="item item-input item-select">
+        <div class="input-label">
+          Select AirCraft Model
+        </div>
+        <select class="list-item" ng-model="mySelect" ng-change="showSelectValue(mySelect)">
+          <option value="Az115 A">Az115 A</option>
+          <option value="Az128 P">Az128 P</option>
+          <option value="Az128 M">Az128 M</option>
+          <option value="Az128 PA">Az128 PA</option>
+        </select>
+      </div>
+    </div>
+
+    <label class="item item-input">
+      <span class="input-label">Empty Weight{{mySelect}}</span>
+      <input type="text" ng-model="reslut1">
+    </label>
+<br>
+    <!--       Pilot in Command                -->
+
+    <div class="list">
+      <div class="item item-input item-select">
+        <div class="input-label">
+          Pilot in Command
+        </div>
+    <select class="list-item" ng-options="size as size.name for size in sizes " ng-model="item" ng-change="update()"></select>
+     {{item.name}} &nbsp; &nbsp; {{ item.designation}}
+ </div>
+    </div>
+<!--   Second in Command -->
+    <div class="list">
+      <div class="item item-input item-select">
+        <div class="input-label">
+          Second in Command
+        </div>
+        <select class="list-item" ng-options="size as size.name for size in sizes " ng-model="item1" ng-change="update()"></select>
+        {{item1.name}} &nbsp; &nbsp; {{ item1.designation}}
+      </div>
+    </div>
+
+    <!--              Crew Member              -->
+
+    <div class="list">
+      <div class="item item-input item-select">
+        <div class="input-label">
+          Crew Member
+        </div>
+        <select class="list-item" ng-options="size as size.name for size in sizes " ng-model="item2" ng-change="update()"></select>
+        {{item2.name}} &nbsp; &nbsp; {{ item2.designation}}
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
